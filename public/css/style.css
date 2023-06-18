@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-poppins);
+}
+
+:root {
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+
+  --white: #fff;
+  --black: #272727;
+  --border: #ebeef0;
+  --primary: #2ca4ab;
+  --seconday: #f4f5f6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  height: 10vh;
+  background-color: var(--white);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  z-index: 10;
+}
+
+.header a {
+  font-weight: 700;
+}
+
+.main {
+  margin-top: 10vh;
+  min-height: 90vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.surah__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.surah__cards .card {
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.surah__cards .card:hover {
+  border: 1px solid var(--primary);
+}
+
+.card .left__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .left__row .num {
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 2.5rem;
+  margin-left: 0.5rem;
+  color: var(--black);
+  z-index: 1;
+}
+
+.surah__transliteration {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.card .left__row .num::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--seconday);
+  transform: translate(-50%, -50%) rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.surah__cards .card:hover .num {
+  color: var(--white);
+}
+
+.surah__cards .card:hover .has-clr-change {
+  color: var(--primary);
+}
+
+.surah__cards .card:hover .num::after {
+  background-color: var(--primary);
+}
+
+.text-small {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.surah__translation,
+.total__ayah {
+  font-weight: 600;
+}
+
+/* surah */
+.verse__card {
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+  display: flex;
+}
+
+.verse__card .btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 4rem;
+}
+
+.verse__card .btns button {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 1rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.verse__card .btns button:hover {
+  background-color: var(--seconday);
+  opacity: 1;
+}
+
+.verse__card .btns button:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.verse__card .btns button:nth-child(2) {
+  font-size: 1.3rem;
+}
+
+.verse__card .btns button:nth-child(5) {
+  font-weight: 700;
+}
+
+.verse__card .right {
+  flex: 1;
+}
+
+.verse__card .ar__text {
+  text-align: right;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}

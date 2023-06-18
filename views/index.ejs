@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran.com</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/">Quran.com</a>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="surah__cards">
+          <div class="surah__cards">
+            <% surahs.forEach(function(surah) { %>
+            <a href="<%= surah.id %>">
+              <div class="card">
+                <div class="left__row">
+                  <div class="num"><%= surah.id %></div>
+                  <div class="surah__name">
+                    <p class="surah__transliteration">
+                      <%= surah.transliteration %>
+                    </p>
+                    <span class="surah__translation text-small has-clr-change"
+                      ><%= surah.translation %></span
+                    >
+                  </div>
+                </div>
+                <div class="right__row">
+                  <div class="arabic__name"><%= surah.name %></div>
+                  <div class="total__ayah text-small has-clr-change">
+                    <%= surah.total_verses %> Ayahs
+                  </div>
+                </div>
+              </div>
+            </a>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
